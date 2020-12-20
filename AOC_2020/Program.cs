@@ -8,7 +8,7 @@ namespace AOC_2020
     {
         static void Main(string[] args)
         {
-            Day_01.Challenge();
+            //Day_01.Challenge();
             Day_02.Challenge();
 
 

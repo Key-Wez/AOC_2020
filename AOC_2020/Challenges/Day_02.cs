@@ -12,6 +12,7 @@ namespace AOC_2020.Challenges
             //Day02 - challenge 01
             Console.WriteLine("\n------------  Day 02 - Challenge 1  ------------");
             string fichierDuProblemeJour2 = "files/AoC_D02_C1.txt";
+
             string[] pair = File.ReadAllLines(fichierDuProblemeJour2);
 
 
@@ -44,23 +45,35 @@ namespace AOC_2020.Challenges
             //Day02 - challenge 02
             Console.WriteLine("\n------------  Day 02 - Challenge 2  ------------");
 
-            /*Func<string, bool> SecondPasswordPolicy = delegate (string pwPolicyPair)
+            Func<string, bool> SecondPasswordPolicy = delegate (string pwPolicyPair)
             {
-                string test = "5-8 t: ttttbttttc";
-                //string test = pwPolicyPair;
+                //string test = "5-8 t: ttttbttttc";
+                string test = pwPolicyPair;
                 string[] SplitArray = test.Split(new char[] { '-', ':', ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
                 int position01 = int.Parse(SplitArray[0]) - 1;
                 int position02 = int.Parse(SplitArray[1]) - 1;
                 string KeyLetter = SplitArray[2];
                 string StringToLookUP = SplitArray[3];
-                *//*  METTRE CETTE  *//*
-                if()
 
-                return false;
-            };*/
+                bool posA = (StringToLookUP.Substring(position01, 1) == KeyLetter); 
+                bool posB = (StringToLookUP.Substring(position02, 1) == KeyLetter);
+                
+                if( (posA || posB) && !(posA && posB))
+                {
+                    return true;
+                    Console.WriteLine(posA);
+                    Console.WriteLine(posB);
 
-
+                }
+                else
+                {
+                    return false;
+                    //Console.WriteLine("false");
+                }
+            };
+            
+            FiltrerMotDeOasseValide(pair, SecondPasswordPolicy);
 
 
         }
