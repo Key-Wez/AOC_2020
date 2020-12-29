@@ -10,7 +10,8 @@ namespace AOC_2020
         {
             //Day_01.Challenge();
             //Day_02.Challenge();
-            Day_03.Challenge();
+            //Day_03.Challenge();
+            Day_04.Challenge();
 
 
         }
