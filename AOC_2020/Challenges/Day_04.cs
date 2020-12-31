@@ -11,68 +11,107 @@ namespace AOC_2020.Challenges
         {
             //Day04 - challenge 01
             Console.WriteLine("\n------------  Day 04 - Challenge 1  ------------");
-
+#if false
             string fichierDuProblemeJour4 = "files/test.txt";
-            string fichierDuProblemeJour4a = "files/test1.txt";
-            //string fichierDuProblemeJour4 = "files/AoC_D04.txt";
-            
+#else
+            string fichierDuProblemeJour4 = "files/AoC_D04.txt";
+#endif         
             string[] DonneesDuPasseport = File.ReadAllLines(fichierDuProblemeJour4);
+            int TotalPasseportValid = 0;
 
-            List<string[]> EnsembleDesPasseport = new List<string[]>();
-            //List<string[]> passport = new List<string[]>();
-
-            List<string> passport = new List<string>();
+            bool byr = false;
+            bool iyr = false;
+            bool eyr = false;
+            bool hgt = false;
+            bool hcl = false;
+            bool ecl = false;
+            bool pid = false;
+            bool cid = false;
 
             foreach (string ligne in DonneesDuPasseport)
             {
+                
+
                 if (ligne != "")
                 {
-                    string[] elements = ligne.Split();
-                    foreach(string el in elements)
+                    string[] champs = ligne.Split();
+                    foreach(string kvalue in champs)
                     {
-                        passport.Add(el);
-                        //passport.Sort();
-                        //Console.WriteLine(el);
+                        switch (kvalue[0])
+                        {
+                            case 'b':
+                                byr = true;
+                                break;
+
+                            case 'i':
+                                iyr = true;
+                                break;
+
+                            case 'e':
+                                if(kvalue[1] == 'y')
+                                {
+                                    eyr = true;
+                                }
+                                else
+                                {
+                                    ecl = true;
+                                }
+                                break;
+
+                            case 'h':
+                                if (kvalue[1] == 'g')
+                                {
+                                    hgt = true;
+                                }
+                                else
+                                {
+                                    hcl = true;
+                                }
+                                break;
+
+                            case 'p':
+                                pid = true;
+                                break;
+                            case 'c':
+                                cid = true;
+                                break;
+                        }
                     }
-                }
-
-                if (ligne == "")
-                {
-                    passport.Sort();
-                    string[] test = passport.ToArray();
-                    File.AppendAllLines(fichierDuProblemeJour4a, test);
-                    EnsembleDesPasseport.Add(test);
-
-                    /*foreach (string t in test)
-                    {
-                        Console.WriteLine(t);
-                    }*/
                     
-                    passport.Clear();
                 }
 
-                
-                /*if (ligne != "" && IncrementDeListe != 0)
+                else
                 {
-                    string[] deliste = passport[compteur];
-                    string[] elements = ligne.Split(" ");
-                    passport.Add(elements);
-                    passport.Add(deliste + elements);
-                }*/
+                    if(byr && iyr && eyr && hgt && hcl && ecl && pid)
+                    {
+                    TotalPasseportValid++;
+                    }
+
+                    byr = false;
+                    iyr = false;
+                    eyr = false;
+                    hgt = false;
+                    hcl = false;
+                    ecl = false;
+                    pid = false;
+                    cid = false;
+                }
+
+
+ 
             }
 
-            Console.WriteLine("*************************");
-
-        /*    foreach (string[] pas in EnsembleDesPasseport)
+            // Process the last line because no empty line.
+            if (byr && iyr && eyr && hgt && hcl && ecl && pid)
             {
-                File.AppendAllLines(fichierDuProblemeJour4a, pas);
-                foreach (string p in pas)
-                {
-                    Console.WriteLine(p);
-                }
-            }*/
+                TotalPasseportValid++;
+            }
+
+            Console.WriteLine("Le nombre de passeport valide = {0}", TotalPasseportValid);
+            //la bonne reponse est 237
 
 
+        
 
 
 
