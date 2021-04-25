@@ -13,13 +13,11 @@ namespace AOC_2020.Challenges
             Console.WriteLine("\n------------  Day 04 - Challenge 1  ------------");
 #if false
             string fichierDuProblemeJour4 = "files/test.txt";
-#else
-            string fichierDuProblemeJour4 = "files/AoC_D04.txt";
-#endif         
-
             string fichierDuProblemeJour4 = @"../../../Files/AoC_D04_test.txt";
-            string fichierDuProblemeJour4a = @"../../../Files/AoC_D04.txt";
-            
+#else
+            string fichierDuProblemeJour4 = @"../../../Files/AoC_D04.txt";
+#endif         
+           
             string[] DonneesDuPasseport = File.ReadAllLines(fichierDuProblemeJour4);
             int TotalPasseportValid = 0;
 
