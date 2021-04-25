@@ -10,7 +10,7 @@ namespace AOC_2020.Challenges
         {
             //Day01 - challenge 01
             Console.WriteLine("------------  Day 01 - Challenge 1  ------------");
-            string fichierDuProbleme = "files/AoC_D01_C1.txt";
+            string fichierDuProbleme = @".. / .. / .. / Files /AoC_D01_C1.txt";
             int[] donneesDuProbleme = Program.ConvertirFicherVersTableau(fichierDuProbleme);
 
             for (int i = 0; i < donneesDuProbleme.Length; i++)

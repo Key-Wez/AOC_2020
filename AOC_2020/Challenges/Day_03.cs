@@ -14,7 +14,7 @@ namespace AOC_2020.Challenges
 
             //string fichierDuProblemeJour3 = "files/test.txt";
 
-            string fichierDuProblemeJour3 = "files/AoC_D03.txt";
+            string fichierDuProblemeJour3 = @"../../../Files/AoC_D03.txt";
             string[] mappeDesSapins = File.ReadAllLines(fichierDuProblemeJour3);
 
 

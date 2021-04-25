@@ -11,7 +11,7 @@ namespace AOC_2020.Challenges
         {
             //Day02 - challenge 01
             Console.WriteLine("\n------------  Day 02 - Challenge 1  ------------");
-            string fichierDuProblemeJour2 = "files/AoC_D02_C1.txt";
+            string fichierDuProblemeJour2 = @"../../../Files/AoC_D02_C1.txt";
 
             string[] pair = File.ReadAllLines(fichierDuProblemeJour2);
 

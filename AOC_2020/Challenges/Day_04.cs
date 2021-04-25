@@ -12,9 +12,8 @@ namespace AOC_2020.Challenges
             //Day04 - challenge 01
             Console.WriteLine("\n------------  Day 04 - Challenge 1  ------------");
 
-            string fichierDuProblemeJour4 = "files/test.txt";
-            string fichierDuProblemeJour4a = "files/test1.txt";
-            //string fichierDuProblemeJour4 = "files/AoC_D04.txt";
+            string fichierDuProblemeJour4 = @"../../../Files/AoC_D04_test.txt";
+            string fichierDuProblemeJour4a = @"../../../Files/AoC_D04.txt";
             
             string[] DonneesDuPasseport = File.ReadAllLines(fichierDuProblemeJour4);
 
