@@ -64,7 +64,7 @@ namespace AOC_2020
 
 
 
-            static int Value(string code) // l'IDE refuse public
+            static int Value(string code)
             {
                 int min = 0;
                 int max = Convert.ToInt32(Math.Pow(2, code.Length));

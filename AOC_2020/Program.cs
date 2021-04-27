@@ -12,7 +12,8 @@ namespace AOC_2020
             //Day_02.Challenge();
             //Day_03.Challenge();
             //Day_04.Challenge();
-            Day_05.Challenge();
+            //Day_05.Challenge();
+            Day_06.Challenge();
 
 
         }
