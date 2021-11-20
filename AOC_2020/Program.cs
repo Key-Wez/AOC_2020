@@ -13,10 +13,15 @@ namespace AOC_2020
             //Day_03.Challenge();
             //Day_04.Challenge();
             //Day_05.Challenge();
-            for (char C = 'a'; C < 'z'; ++C)
-                Console.WriteLine(C);
+#if true
+            char C = 'a';
             if (C != 'a')
-                Day_06.Challenge();
+                Day_06.Challenge(); // This is a TEST to be REVERTED!!!
+            ++C;
+#endif
+            Day_06.Challenge();
+
+
         }
 
 
