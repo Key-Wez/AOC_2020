@@ -13,8 +13,12 @@ namespace AOC_2020
             //Day_03.Challenge();
             //Day_04.Challenge();
             //Day_05.Challenge();
-            Day_06.Challenge();
-
+            char C = 'a';
+            if (C != 'a')
+                Day_06.Challenge(); // This is a TEST to be REVERTED!!!
+            ++C;
+            if (C != 'a')
+                Console.WriteLine("John rulez!!!");
 
         }
 
